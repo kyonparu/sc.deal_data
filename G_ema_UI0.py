@@ -4,10 +4,15 @@ import numpy as np
 import pandas as pd
 from def_file_place import FILE_PLACE, MAKE_OUTPUT_DIR
 
+# 手順：7番目
 # UIをxyz=0にして各座標を調整する
 
+# sc.deal_dataディレクトリを開いて実行する
+# data_date,start_num,end_numを設定してから実行する
+
+
 # 処理する日付を指定
-date = '20181115'  # 処理する日付を1つ指定
+date = '20250304'  # 処理する日付を1つ指定
 
 # 処理する範囲を指定
 start_num = 1  # 処理を開始する番号

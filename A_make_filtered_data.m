@@ -2,13 +2,13 @@
 % EMA_obsevation ディレクトリを現在のフォルダにして実行
 % 音声とEMAデータのふぃるたをかける
 %dataフォルダの場所
-header1 ='sc.deal_data/..';
+header1 ='sc.deal_data/../..';
 %dataフォルダ
 header2='/data/';
 %処理するデータの日付
 d_date='20250304';
-START_ID= 20002;
-END_ID= 20003;
+START_ID= 10001;
+END_ID= 10503;
 s_date=d_date;
 start_ch = 1;
 end_ch = 12;
@@ -63,7 +63,7 @@ for ID=START_ID:END_ID
             end
             figure(4)
             [nraw, ncol]=size(O_M);
-            writematrix(fileema_name_filtered, O_M, 'delimiter', '\t');
+            writematrix(O_M, fileema_name_filtered, 'delimiter', '\t');
             time=(1:nraw)/f_ema;
             plot(time, M(:,3));
             hold on

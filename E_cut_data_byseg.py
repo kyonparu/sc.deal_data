@@ -1,8 +1,3 @@
-## JuliusのsilBとsilEを読み取る
-## その箇所になるようにwavをカットする
-## EGGもカットする
-## EMAもカットする
-
 # Juliusのデータ読み取り
 import numpy as np
 import pandas as pd
@@ -12,7 +7,14 @@ import math
 from scipy.io import wavfile
 from def_file_place import FILE_PLACE, MAKE_OUTPUT_DIR
 
-data_date = '20181115'
+# 手順：5番目(4番目(D)のあとにJuliusでラベリングする。)
+# ラベリングデータをもとに音声、EGG、EMAの無音区間をカットする
+
+# sc.deal_dataディレクトリを開いて実行する
+# {data_date}edit内に{data_date}segディレクトリをつくり、{発話番号三桁}.labがあるようにする
+# data_date,start_num,end_num、カットする対象(最初にやるときは全部指定)を設定してから実行する
+
+data_date = '20250304'
 start_num = 1
 end_num = 503
 

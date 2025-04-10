@@ -1,13 +1,16 @@
 %close all
-%手順：1番目（音声とemaは別ファイル）ハイパスフィルタ処理
-%eggデータの
+%手順：1番目（音声とemaは別ファイル）eggデータのハイパスフィルタ処理
+
 % dataとsc.deal_dataが見えてる状態で実行
 
-header1='sc.deal_data/../';
+% START_IDは処理始めの発話番号(5桁)
+% END_IDは処理終わりの発話番号(5桁)START_IDから連番でファイルが存在しないとできない
+
+header1='sc.deal_data/../..';
 header2='/data/';
 d_date='20250304';
- START_ID=30251;
- END_ID=30300;
+ START_ID=10001;
+ END_ID=10050;
 
 for ID=START_ID:END_ID
     now_ID = sprintf('%d',ID)

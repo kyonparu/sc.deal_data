@@ -2,8 +2,14 @@ import os
 import numpy as np
 from def_file_place import FILE_PLACE, MAKE_OUTPUT_DIR
 
+# 手順：4番目
+# EGGのデータをCSV形式に変換する
+
+# sc.deal_dataディレクトリを開いて実行する
+# data_date,first_file,last_file,keta_45を設定してから実行する
+
 # 一番上のフォルダ
-data_date = 20181115
+data_date = 20250304
 
 # ループ回数
 # first→変換する初めの発話番号、last→変換する最後の発話番号
@@ -18,7 +24,7 @@ for file_num in range(first_file, last_file + 1):
 
     # keta_45の設定
     if file_num <= 50:
-        keta_45 = 10
+        keta_45 = 20
     elif file_num <= 100:
         keta_45 = 10
     elif file_num <= 150:
@@ -28,7 +34,7 @@ for file_num in range(first_file, last_file + 1):
     elif file_num <= 250:
         keta_45 = 10
     elif file_num <= 300:
-        keta_45 = 10
+        keta_45 = 30
     elif file_num <= 350:
         keta_45 = 10
     elif file_num <= 400:

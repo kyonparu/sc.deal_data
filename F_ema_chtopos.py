@@ -2,8 +2,14 @@ import os
 import shutil
 from def_file_place import FILE_PLACE, MAKE_OUTPUT_DIR
 
+# 手順：6番目
+# EMAのデータをファイル名でどこに貼られていたかわかるようにする
+
+# sc.deal_dataディレクトリを開いて実行する
+# data_date,start_num,end_num、chMAPを設定してから実行する
+
 # 日付と観測箇所の設定
-data_date = 20181115
+data_date = 20250304
 start_num = 1
 end_num = 503
 
@@ -11,15 +17,15 @@ end_num = 503
 chMap = [
     ('NA', 5),
     ('ND', 1),
-    ('UI', 3),
-    ('UL', 9),
+    ('UI', 12),
+    ('UL', 7),
     ('LL', 6),
-    ('LJ', 10),
-    ('T1', 7),
+    ('LJ', 8),
+    ('T1', 10),
     ('T2', 11),
     ('T3', 4),
-    ('ch8', 8),  # 未使用のchを(ch[n],[n])となるようにする
-    ('ch12', 12)
+    ('ch3', 3),  # 未使用のchを(ch[n],[n])となるようにする
+    ('ch9', 9)
 ]
 
 # ch番号の降順でソート（置換順序を確実にするため）

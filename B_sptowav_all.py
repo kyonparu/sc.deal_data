@@ -7,11 +7,12 @@ from def_file_place import FILE_PLACE, MAKE_OUTPUT_DIR
 # 手順：2番目(1番目はmatlabでフィルタリング)
 # spを取得して50kHzのwavに変換、ラベリング用の16kHzのwavも作成
 
+# sc.deal_dataディレクトリを開いて実行する
 # data_date,first_file,last_file,keta_45を設定してから実行する
 # {data_date}editはedit内に作っておく
 
 # 処理する観測日
-data_date = 20181115
+data_date = 20250304
 # ループ回数                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 first_file = 1
 last_file = 503
@@ -24,7 +25,7 @@ for file_num in range(first_file, last_file + 1):
 
     # keta_45の設定
     if file_num <= 50:
-        keta_45 = 10
+        keta_45 = 20
     elif file_num <= 100:
         keta_45 = 10
     elif file_num <= 150:
@@ -34,7 +35,7 @@ for file_num in range(first_file, last_file + 1):
     elif file_num <= 250:
         keta_45 = 10
     elif file_num <= 300:
-        keta_45 = 10
+        keta_45 = 30
     elif file_num <= 350:
         keta_45 = 10
     elif file_num <= 400:
@@ -68,5 +69,8 @@ for file_num in range(first_file, last_file + 1):
     num_samples = int(len(inputfile) * fs_resampled / fs)
     resampled_data = resample(inputfile, num_samples)
 
+    # データを16bit整数型に変換
+    resampled_data = (resampled_data * 32767).astype(np.int16)
+
     # ファイルの書き込み (16k)
-    wavfile.write(output_fullpath_16k, fs_resampled, resampled_data.astype(np.float32))
+    wavfile.write(output_fullpath_16k, fs_resampled, resampled_data)
